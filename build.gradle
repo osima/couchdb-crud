@@ -1,0 +1,23 @@
+
+defaultTasks 'build'
+//defaultTasks 'build','javadoc','groovydoc'
+
+
+//apply plugin: 'java'
+apply plugin: 'groovy'
+
+archivesBaseName = "couchdb-crud"
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+
+	compile group:'commons-httpclient', name:'commons-httpclient', version:'3.1'
+	compile group:'net.sf.json-lib', name:'json-lib', version:'2.4', classifier:'jdk15'
+}
+
+
