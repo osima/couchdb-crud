@@ -7,24 +7,22 @@ import org.apache.commons.httpclient.methods.*
 
 
 
+class Create extends CrudBase {
 
-class Create {
+	//String documentId
 
-	String dbname
-	String documentId
 	JSONObject json
 
-	JSONObject proc(){
+	JSONObject process(){
 
-		def r=null
-
-		def myurl = new URL("http://localhost:5984/${dbname}/${documentId}")
+		def myurl = new URL("${baseUrl}/${documentId}")
 
 		def hc = new HttpClient()
 		def method = new MyPutMethod( myurl.toString() )
 		method.setRequestBody( json.toString() )
 		hc.executeMethod( method )
-		r = method.getResponseBodyAsString()
+
+		def r = method.getResponseBodyAsString()
 		
 		method.releaseConnection()
 

@@ -5,18 +5,14 @@ import net.sf.json.*
 import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
-class Read {
+class Read extends CrudBase {
 
-	String dbname
-	String documentId
+	//String documentId
 
-	JSONObject proc(){
+	JSONObject process(){
 
-		def r = null
-
-		def myurl = new URL("http://localhost:5984/${dbname}/${documentId}")
-		def reader = myurl.newReader('UTF-8')
-		r = reader.text
+		def reader = new URL("${baseUrl}/${documentId}").newReader('UTF-8')
+		def r = reader.text
 		reader.close()
 
 		JSONObject.fromObject( r )

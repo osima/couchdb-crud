@@ -5,24 +5,17 @@ import net.sf.json.*
 import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
-class Update extends CrudBase {
 
-	//String documentId
-
-	String revision
-	JSONObject json
+class DeleteDb extends Base {
 
 	JSONObject process(){
 
-		def myurl = new URL("${baseUrl}/${documentId}")
+		def myurl = new URL(baseUrl)
 		
 		def hc = new HttpClient()
-		def method = new MyPutMethod( myurl.toString() )
-
-		json.put( '_rev', revision )
-		method.setRequestBody( json.toString() )
-
+		def method = new DeleteMethod( myurl.toString() )
 		hc.executeMethod( method )
+
 		def r = method.getResponseBodyAsString()
 		
 		method.releaseConnection()
@@ -30,3 +23,4 @@ class Update extends CrudBase {
 		JSONObject.fromObject( r )
 	}
 }
+
