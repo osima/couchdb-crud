@@ -21,6 +21,13 @@ class CouchDb {
 		port
 	}
 
+	JSONObject getAllDocs(){
+		new GetAllDocs(
+			hostname:hostname,
+			port:port,
+			dbname:dbname ).process()
+	}
+
 	//
 	// manipulation database
 	//

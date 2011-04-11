@@ -35,7 +35,10 @@ class TestCrud extends GroovyTestCase {
 
 		def db = new CouchDb( dbname:dbname, hostname:hostname )
 		db.createDatabase()
+
+		db.getAllDocs()
 	}
+
 	void testDeleteDb(){
 		String dbname = 'testdb1' 
 		String hostname = 'localhost'
