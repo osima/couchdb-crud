@@ -67,7 +67,7 @@ class TestCrud extends GroovyTestCase {
 		assertTrue( db.readDocument(documentId).get('title') == 'Hello again CouchDb!' )
 
 		db.deleteDocument(documentId)
-    	}
+	}
 
 
 	/*
