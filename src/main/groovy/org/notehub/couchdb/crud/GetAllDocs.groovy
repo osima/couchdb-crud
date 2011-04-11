@@ -13,10 +13,14 @@ class GetAllDocs extends Base {
 		def myurl = new URL("${baseUrl}/_all_docs")
 
 		def hc = new HttpClient()
-		def method = new MyPutMethod( myurl.toString() )
+		def method = new GetMethod( myurl.toString() )
 		hc.executeMethod( method )
 
-		def r = method.getResponseBodyAsString()
+		def reader = new InputStreamReader( method.getResponseBodyAsStream(), encoding )
+		def r = reader.text
+		reader.close()
+
+		//def r = method.getResponseBodyAsString()
 		
 		method.releaseConnection()
 

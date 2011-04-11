@@ -13,7 +13,7 @@ class CreateDb extends Base {
 		def myurl = new URL(baseUrl)
 
 		def hc = new HttpClient()
-		def method = new MyPutMethod( myurl.toString() )
+		def method = new MyPutMethod( myurl.toString(), encoding )
 		hc.executeMethod( method )
 
 		def r = method.getResponseBodyAsString()

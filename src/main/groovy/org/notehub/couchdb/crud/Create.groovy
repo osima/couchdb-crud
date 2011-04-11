@@ -9,8 +9,6 @@ import org.apache.commons.httpclient.methods.*
 
 class Create extends CrudBase {
 
-	//String documentId
-
 	JSONObject json
 
 	JSONObject process(){
@@ -18,7 +16,7 @@ class Create extends CrudBase {
 		def myurl = new URL("${baseUrl}/${documentId}")
 
 		def hc = new HttpClient()
-		def method = new MyPutMethod( myurl.toString() )
+		def method = new MyPutMethod( myurl.toString(), encoding )
 		method.setRequestBody( json.toString() )
 		hc.executeMethod( method )
 

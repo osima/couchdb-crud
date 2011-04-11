@@ -17,7 +17,7 @@ class Update extends CrudBase {
 		def myurl = new URL("${baseUrl}/${documentId}")
 		
 		def hc = new HttpClient()
-		def method = new MyPutMethod( myurl.toString() )
+		def method = new MyPutMethod( myurl.toString(),encoding )
 
 		json.put( '_rev', revision )
 		method.setRequestBody( json.toString() )
