@@ -36,6 +36,9 @@ class TestCrud extends GroovyTestCase {
 		def db = new CouchDb( dbname:dbname, hostname:hostname )
 		db.createDatabase()
 
+		assertTrue db.exists(dbname)
+
+		db.getAllDbs()
 		db.getAllDocs()
 	}
 

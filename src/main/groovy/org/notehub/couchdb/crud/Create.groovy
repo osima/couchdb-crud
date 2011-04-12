@@ -7,7 +7,7 @@ import org.apache.commons.httpclient.methods.*
 
 
 
-class Create extends CrudBase {
+class Create extends DocBase {
 
 	JSONObject json
 

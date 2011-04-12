@@ -6,11 +6,11 @@ import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
 
-class GetAllDocs extends DbBase {
+class GetAllDbs extends Base {
 
-	JSONObject process(){
+	JSONArray process(){
 
-		def myurl = new URL("${baseUrl}/_all_docs")
+		def myurl = new URL("${baseUrl}/_all_dbs")
 
 		def hc = new HttpClient()
 		def method = new GetMethod( myurl.toString() )
@@ -22,6 +22,6 @@ class GetAllDocs extends DbBase {
 
 		method.releaseConnection()
 
-		JSONObject.fromObject( r )
+		JSONArray.fromObject( r )
 	}
 }

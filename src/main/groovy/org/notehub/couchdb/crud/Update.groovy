@@ -5,7 +5,7 @@ import net.sf.json.*
 import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
-class Update extends CrudBase {
+class Update extends DocBase {
 
 	//String documentId
 

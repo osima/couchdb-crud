@@ -6,7 +6,7 @@ import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
 
-class DeleteDb extends Base {
+class DeleteDb extends DbBase {
 
 	JSONObject process(){
 

@@ -6,7 +6,7 @@ import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
 
-class Delete extends CrudBase {
+class Delete extends DocBase {
 
 	//String documentId 
 

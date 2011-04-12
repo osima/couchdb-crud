@@ -3,8 +3,6 @@ package org.notehub.couchdb.crud
 
 class Base {
 
-	String dbname
-
 	String hostname
 	Integer port
 
@@ -23,8 +21,5 @@ class Base {
 		port
 	}
 
-	String getBaseUrl(){
-		"http://${getHostname()}:${getPort()}/${dbname}"
-		//"http://${hostname}:${port}/${dbname}"
-	}
+	String getBaseUrl(){ "http://${getHostname()}:${getPort()}" }
 }

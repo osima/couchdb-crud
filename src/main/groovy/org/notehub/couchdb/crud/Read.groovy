@@ -5,7 +5,7 @@ import net.sf.json.*
 //import org.apache.commons.httpclient.*
 //import org.apache.commons.httpclient.methods.*
 
-class Read extends CrudBase {
+class Read extends DocBase {
 
 	JSONObject process(){
 

@@ -2,9 +2,6 @@ package org.notehub.couchdb.crud
 
 import net.sf.json.*
 
-//import org.apache.commons.httpclient.*
-//import org.apache.commons.httpclient.methods.*
-
 
 class CouchDb {
 
@@ -19,6 +16,14 @@ class CouchDb {
 	Integer getPort(){
 		if(port==null) port = 5984
 		port
+	}
+
+	boolean exists(String dbname){ getAllDbs().contains(dbname) }
+
+	JSONArray getAllDbs(){
+		new GetAllDbs(
+			hostname:hostname,
+			port:port).process()
 	}
 
 	JSONObject getAllDocs(){

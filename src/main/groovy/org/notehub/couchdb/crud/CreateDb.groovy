@@ -6,7 +6,7 @@ import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
 
-class CreateDb extends Base {
+class CreateDb extends DbBase {
 
 	JSONObject process(){
 

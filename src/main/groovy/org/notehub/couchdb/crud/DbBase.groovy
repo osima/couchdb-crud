@@ -1,15 +1,22 @@
 package org.notehub.couchdb.crud
 
 
-class CrudBase extends Base {
+class DbBase extends Base {
 
-	String documentId 
-
-	/*
 	String dbname
 
+	@Override
+	String getBaseUrl(){ "http://${getHostname()}:${getPort()}/${dbname}" }
+
+	/*
 	String hostname
 	Integer port
+
+	String encoding
+	String getEncoding(){
+		if(encoding==null) encoding='UTF-8'
+		return encoding
+	}
 
 	String getHostname(){
 		if(hostname==null) hostname='localhost'
