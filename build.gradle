@@ -7,6 +7,8 @@ defaultTasks 'build'
 apply plugin: 'groovy'
 
 archivesBaseName = "couchdb-crud"
+group='org.notehub.couchdb-crud'
+version='0.1'
 
 
 repositories {
