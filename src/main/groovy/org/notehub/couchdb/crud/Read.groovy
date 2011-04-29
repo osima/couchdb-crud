@@ -9,11 +9,16 @@ class Read extends DocBase {
 
 	JSONObject process(){
 
-		def reader = new URL("${baseUrl}/${documentId}").newReader(encoding)
-		def r = reader.text
-		reader.close()
-
-		JSONObject.fromObject( r )
+		try{
+			def reader = new URL("${baseUrl}/${documentId}").newReader(encoding)
+			def r = reader.text
+			reader.close()
+	
+			return JSONObject.fromObject( r )
+		}
+		catch(Exception ex){
+			return null
+		}
 	}
 }
 
