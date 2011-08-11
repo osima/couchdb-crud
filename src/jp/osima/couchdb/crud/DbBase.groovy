@@ -1,4 +1,4 @@
-package org.notehub.couchdb.crud
+package jp.osima.couchdb.crud
 
 
 class DbBase extends Base {

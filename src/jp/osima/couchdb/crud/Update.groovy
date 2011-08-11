@@ -1,25 +1,28 @@
-package org.notehub.couchdb.crud
+package jp.osima.couchdb.crud
 
 import net.sf.json.*
 
 import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
+class Update extends DocBase {
 
+	//String documentId
 
-class Create extends DocBase {
-
+	String revision
 	JSONObject json
 
 	JSONObject process(){
 
 		def myurl = new URL("${baseUrl}/${documentId}")
-
+		
 		def hc = new HttpClient()
-		def method = new MyPutMethod( myurl.toString(), encoding )
-		method.setRequestBody( json.toString() )
-		hc.executeMethod( method )
+		def method = new MyPutMethod( myurl.toString(),encoding )
 
+		json.put( '_rev', revision )
+		method.setRequestBody( json.toString() )
+
+		hc.executeMethod( method )
 		def r = method.getResponseBodyAsString()
 		
 		method.releaseConnection()

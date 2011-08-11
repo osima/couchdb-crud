@@ -1,14 +1,21 @@
 
-# couchdb-crud 
+h1. couchdb-crud 
 
 This is a Simple CRUD library for CouchDB in groovy.
 
+h2. Build
 
-## code example
+gradle
+
+bq. You have to up couchDb in localhost or test failed.
+
+
+h2. Example
 
 You can manipulate database like this ...
 
 
+{code}
     import net.sf.json.JSONObject
 
     db = new CouchDb( dbname:'testdb' )
@@ -34,6 +41,6 @@ You can manipulate database like this ...
 
     // 5)
     db.deleteDatabase()
-
+{code}
 
 

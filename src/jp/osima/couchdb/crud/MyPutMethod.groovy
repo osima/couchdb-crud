@@ -1,4 +1,4 @@
-package org.notehub.couchdb.crud
+package jp.osima.couchdb.crud
 
 import org.apache.commons.httpclient.methods.PutMethod
 

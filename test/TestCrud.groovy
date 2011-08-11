@@ -3,7 +3,7 @@ import groovy.util.GroovyTestCase
 
 import net.sf.json.*
 
-import org.notehub.couchdb.crud.*
+import jp.osima.couchdb.crud.*
 
 
 class TestCrud extends GroovyTestCase {

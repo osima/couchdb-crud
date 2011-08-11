@@ -1,4 +1,4 @@
-package org.notehub.couchdb.crud
+package jp.osima.couchdb.crud
 
 import net.sf.json.*
 
@@ -6,19 +6,14 @@ import org.apache.commons.httpclient.*
 import org.apache.commons.httpclient.methods.*
 
 
-class Delete extends DocBase {
-
-	//String documentId 
-
-	String revision
+class DeleteDb extends DbBase {
 
 	JSONObject process(){
 
-		def myurl = new URL("${baseUrl}/${documentId}")
+		def myurl = new URL(baseUrl)
 		
 		def hc = new HttpClient()
 		def method = new DeleteMethod( myurl.toString() )
-		method.setQueryString( new NameValuePair('rev',"${revision}" ) )
 		hc.executeMethod( method )
 
 		def r = method.getResponseBodyAsString()
